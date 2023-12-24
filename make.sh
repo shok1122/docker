@@ -23,7 +23,7 @@ echo "command: $COMMAND"
 	fi
 
 	if [ $COMMAND = "run" ]; then
-		docker run -it --rm ${REPO}/${img}:${ver} bash
+		docker run -it --rm --entrypoint bash ${REPO}/${img}:${ver}
 	fi
 )
 
