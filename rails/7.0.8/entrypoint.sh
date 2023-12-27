@@ -1,11 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ -z "$@" ]; then
 	if [ ! -f .done-init ]; then
-		# clean up
-		rm -rf *
 		# rails new
-		rails new . -f -m /usr/src/template.rb
+		rails new . -f -m /usr/src/template.rb -T --minimal
+		rm -rf .git
 		# save state
 		touch .done-init
 	fi
