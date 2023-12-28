@@ -1,0 +1,8 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+gem 'neo4j'
+gem 'neo4j-core'
+gem 'activesupport', '7.0.8'
+gem 'activegraph'
