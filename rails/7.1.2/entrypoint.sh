@@ -27,6 +27,11 @@ if [ "start" = "$1" ]; then
 		fi
 
 		# ===========================
+		# Configure rails app
+		# ===========================
+		cat /tmp/development.rb >> ./config/environments/development.rb
+
+		# ===========================
 		# Post-processing
 		# ===========================
 		rm -rf .git
@@ -37,7 +42,7 @@ if [ "start" = "$1" ]; then
 	# Run server
 	# ===========================
 	rm -f tmp/pids/server.pid
-	bin/rails server -b 0.0.0.0
+	bin/rails server -b 0.0.0.0 -p 80
 else
 	# ===========================
 	# Exec any command

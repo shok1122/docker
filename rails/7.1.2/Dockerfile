@@ -11,14 +11,15 @@ RUN apt-get update \
 
 WORKDIR $PATH_ROOT/lib
 
-COPY template.rb template.rb
-COPY sample.sh sample.sh
+#COPY template.rb template.rb
+#COPY sample.sh sample.sh
 COPY postgres.yml postgres.yml
 
 WORKDIR $PATH_ROOT/var
 
 RUN bundle config set --local path .bundle
 
+COPY development.rb /tmp/development.rb
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
